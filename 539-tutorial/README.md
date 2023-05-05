@@ -6,9 +6,6 @@ Classical languages are languages that have a large amount of written works that
 CLTK uses 3 letter strings to refer to a language within the code. Some of the languages have less lexicon and less tools than other languages.
 
 | Language  | Code |
-
-| ---------- | ---------- |
-
 | Akkadian  | "akk"  |
 | Arabic  | "arb"  |
 | Aramaic | "arc" |
