@@ -1,2 +1,2 @@
-# Ready
-undercut
+# Classical Language Toolkit
+Zachary Shuda
