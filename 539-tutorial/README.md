@@ -3,7 +3,7 @@ Zachary Shuda
 ### Introduction
 Classical languages are languages that have a large amount of written works that date to an earlier time. Since many classical languages are earlier forms of modern languages, classical languages usually have different grammar, syntax, and phonology. CLTK offers the ability to tag a variety of classical languages for parts of speech and phonetics.
 ## Offered languages
-CLTK uses 3 letter strings to refer to a language within the code. Some of the languages have less lexicon and less tools than other languages.
+CLTK uses 3 letter strings to refer to a language within the code. Some of the languages have less lexicon and less tools than other languages. Latin has the most functionality and resources and tutorials usually use Latin as the example language. In the demonstration, I will be using Old Norse as an example because I am very familiar with Old Norse grammar and phonology.
 
 | Language  | Code |
 | Akkadian  | "akk"  |
@@ -25,8 +25,6 @@ CLTK uses 3 letter strings to refer to a language within the code. Some of the l
 | Pali | "pli" |
 | Punjabi | "pan" |
 | Sanskrit | "san" |
-
-In the demonstration, I will be using Old Norse "non" as an example because I am very familiar with Old Norse grammar and phonology.
 
 ## Phonological Transcription and Syllabification
 Old Norse text can be broken down into phonemes and syllables with the following code:
@@ -74,3 +72,9 @@ tags[11]  # tag_tnt tagged this word as preposition which it sometimes is, but i
 tags[14]  # tag_tnt decided it couldn't tag this word, but it is adjective
 >>> ('móðugr','Unk')
 ```
+## Conclusion
+Different languages have different problems that arise from analysis. The largest problem with Old Norse is its highly fusional nature. In a language like Latin, most words can be broken into a root and an ending, where the root changes little or not at all as the endings change. In Old Norse, the root can change given different endings, meaning different forms of the root need be given for a parser to recognize the variants. In particular, the vowel or vowels of the root can change between two endings, even if the endings look the same. Arabic has a similar feature where the vowels of the root will change and an ending will be used to give a specific grammatical meaning. In Old Norse, this is mostly because the endings used to have vowels that caused the root vowel to harmonize and then the ending vowel disappeared or severly reduced.
+
+fótr (a foot) fótar (of a foot) fœtr (feet)
+hönd (a hand) handar (of a hand) hendr (hands)
+helpr (one helps) hjalpa (they help) halp (one helped) hulpu (they helped)
