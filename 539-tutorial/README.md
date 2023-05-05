@@ -27,6 +27,7 @@ CLTK uses 3 letter strings to refer to a language within the code. Some of the l
 | Sanskrit | "san" |
 
 In the demonstration, I will be using Old Norse "non" as an example because I am very familiar with Old Norse grammar and phonology.
+
 ## Phonological Transcription and Syllabification
 Old Norse text can be broken down into phonemes and syllables with the following code:
 
@@ -46,7 +47,16 @@ With that setup, we can take a string of text in Old Norse and convert into phon
 string1 = "Býr fyr austan Élivága; hundvíss Hymir at himins enda; á minn faðir móðugr ketil; rúmbrugðinn hver, rastar djúpan."
 doc = nlp.analyze(string1)
 doc.words[3].phonetic_transcription
->> eːlivaːɣa
+>>> eːlivaːɣa
 ```
 
-We can also
+We can also break the words into syllables, though the syllabification is simplistic and creates minor errors.
+
+```
+doc.words[4].syllables
+>>> ['hund','víss']
+doc.words[14].syllables  # proper syllabification would be ['rúm','brug','ðinn']
+>>> ['rúmb','rug','ðinn']
+```
+
+## POS Tagging
