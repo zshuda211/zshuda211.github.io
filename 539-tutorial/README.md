@@ -45,4 +45,8 @@ With that setup, we can take a string of text in Old Norse and convert into phon
 ```
 string1 = "Býr fyr austan Élivága; hundvíss Hymir at himins enda; á minn faðir móðugr ketil; rúmbrugðinn hver, rastar djúpan."
 doc = nlp.analyze(string1)
+doc.words[3].phonetic_transcription
+>> eːlivaːɣa
 ```
+
+We can also
