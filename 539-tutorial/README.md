@@ -37,6 +37,7 @@ from cltk.tokenizers.processes import OldNorseTokenizationProcess
 from cltk.text.processes import OldNorsePunctuationRemovalProcess
 from cltk.phonology.processes import OldNorsePhonologicalTranscriberProcess,OldNorseSyllabificationProcess
 from cltk.languages.utils import get_lang
+from cltk.nlp import NLP
 pipe = Pipeline(description = "", processes = [OldNorseTokenizationProcess,OldNorsePunctuationRemovalProcess,OldNorsePhonologicalTranscriberProcess,OldNorseSyllabificationProcess], language = get_lang("non"))
 nlp = NLP(language = "non", custom_pipeline = pipe, suppress_banner = True)
 ```
@@ -60,3 +61,16 @@ doc.words[14].syllables  # proper syllabification would be ['rúm','brug','ðinn
 ```
 
 ## POS Tagging
+Old Norse text can be tagged with a part of speech. Verbs and nouns have specified form and case information. Undetermined words are tagged as "Unk".
+
+```
+from cltk.tag.pos import *
+p = POSTag(language="non")
+tags = p.tag_tnt(string1)
+tags[8]  # It is noun in genitive case
+>>> ('himins','N-G')
+tags[11]  # tag_tnt tagged this word as preposition which it sometimes is, but in this sentence, it is a verb
+>>> ('á','P')
+tags[14]  # tag_tnt decided it couldn't tag this word, but it is adjective
+>>> ('móðugr','Unk')
+```
